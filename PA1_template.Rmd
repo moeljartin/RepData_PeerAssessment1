@@ -3,7 +3,12 @@ title: "Reproducible Research Project"
 author: "Joel Martin"
 date: "April 5, 2016"
 output: html_document
+keep_md: true
 ---
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(fig.path='figure/')
+```
 
 # Reproducible Research: Step Data Analysis
 ### Author: Joel Martin
@@ -129,7 +134,6 @@ library(ggplot2)
 ```{r pairplot, external=TRUE}
 qplot(interval, steps, data = dateintervals, geom = "line", group = type) + facet_grid(type~.)
 ```
-![plot 4](figure/pairplot.png)
 
 We can see that the large spike in the morning is not present on the weekend, likely indicating that this individual typically walks before or to work. 
 
