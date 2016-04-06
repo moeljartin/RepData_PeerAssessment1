@@ -129,6 +129,7 @@ library(ggplot2)
 ```{r pairplot, external=TRUE}
 qplot(interval, steps, data = dateintervals, geom = "line", group = type) + facet_grid(type~.)
 ```
+![plot 4](figure/pairplot.png)
 
 We can see that the large spike in the morning is not present on the weekend, likely indicating that this individual typically walks before or to work. 
 
