@@ -26,14 +26,14 @@ No further pre-processing was required.
 
 We first used the dplyr package to summarize the data by day. 
 
-```{r message=FALSE}
+```{r}
 library(dplyr)
 dailydata <- walkingdata %>% group_by(date) %>% summarise(daily = sum(steps))
 ```
 
 Next we generated a histogram to understand the distribution of the data. 
 
-```{r}
+```{r external=TRUE}
 hist(dailydata$daily, breaks = 10, main = "Daily Step Distribution", xlab = "Steps")
 ```
 
@@ -124,6 +124,9 @@ We can then plot the resulting data in a time series, this time as a two panel p
 
 ```{r message=FALSE}
 library(ggplot2)
+```
+
+```{r pairplot, external=TRUE}
 qplot(interval, steps, data = dateintervals, geom = "line", group = type) + facet_grid(type~.)
 ```
 
